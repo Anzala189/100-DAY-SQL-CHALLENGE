@@ -39,6 +39,7 @@ FROM CTE2
 ORDER BY NO_MATCHES_WON DESC, NO_OF_LOSSES;
 SELECT*FROM icc_world_cup;
 
+![Dashboard Screenshot](images/dashboard.png)
 
 
 
