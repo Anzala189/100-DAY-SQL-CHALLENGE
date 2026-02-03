@@ -39,7 +39,7 @@ FROM CTE2
 ORDER BY NO_MATCHES_WON DESC, NO_OF_LOSSES;
 SELECT*FROM icc_world_cup;
 
-![Day_1](https://github.com/Anzala189/100-DAY-SQL-CHALLENGE/blob/cd8f671482bc9957a86067cd8adc6ca86ca2c640/image.png)
+![image](https://github.com/Anzala189/100-DAY-SQL-CHALLENGE/blob/cd8f671482bc9957a86067cd8adc6ca86ca2c640/image.png)
 
 
 
