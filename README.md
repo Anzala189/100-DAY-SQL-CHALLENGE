@@ -40,8 +40,7 @@ FROM CTE2
 ORDER BY NO_MATCHES_WON DESC, NO_OF_LOSSES;
 SELECT*FROM icc_world_cup;
 
-![image](https://github.co
-m/Anzala189/100-DAY-SQL-CHALLENGE/blob/cd8f671482bc9957a86067cd8adc6ca86ca2c640/image.png)
+![image](https://github.com/Anzala189/100-DAY-SQL-CHALLENGE/blob/c7a07cad66fadd64bbc224d9d3afe37598d7421d/image.png)
 
 -- Day 2 Problem
 -- Day 2 : Find the employees with salary more than their manager salary
@@ -65,6 +64,7 @@ FROM EMP E INNER JOIN EMP M ON M.EMP_ID = E.MANAGER_ID
 WHERE E.SALARY > M.SALARY
 ORDER BY E.EMP_NAME ASC;
 
+![image](https://github.com/Anzala189/100-DAY-SQL-CHALLENGE/blob/c7a07cad66fadd64bbc224d9d3afe37598d7421d/images/Day_2_employeesalary%20more%20than%20managersalary.jpg)
 
 
 
