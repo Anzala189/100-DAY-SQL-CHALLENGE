@@ -49,7 +49,6 @@ SELECT*FROM icc_world_cup;
 
 QUESTION#2:
 
--- Day 2 Problem
 -- Day 2 : Find the employees with salary more than their manager salary
 -- Script 2 :
 CREATE DATABASE employeessalary_managersalary; 
@@ -64,15 +63,10 @@ INSERT INTO EMP VALUES(7,'SANJAY',9000,2);
 INSERT INTO EMP VALUES(8,'ASHISH',5000,2);
 
 SELECT * FROM EMP;
-
---SOLUTION:
-
-SELECT E.EMP_ID, E.EMP_NAME, M.EMP_NAME AS MANAGER_NAME, E.SALARY, M.SALARY AS "MANAGER SALARY" 
-
+--  My Solution: 
+SELECT E.EMP_ID, E.EMP_NAME, M.EMP_NAME AS MANAGER_NAME, E.SALARY, M.SALARY AS "MANAGER SALARY"
 FROM EMP E INNER JOIN EMP M ON M.EMP_ID = E.MANAGER_ID 
-
 WHERE E.SALARY > M.SALARY
-
 ORDER BY E.EMP_NAME ASC;
 
 ![image](https://github.com/Anzala189/100-DAY-SQL-CHALLENGE/blob/c7a07cad66fadd64bbc224d9d3afe37598d7421d/images/Day_2_employeesalary%20more%20than%20managersalary.jpg)
