@@ -19,3 +19,23 @@ SELECT E.EMP_ID, E.EMP_NAME, M.EMP_NAME AS MANAGER_NAME, E.SALARY, M.SALARY AS "
 FROM EMP E INNER JOIN EMP M ON M.EMP_ID = E.MANAGER_ID 
 WHERE E.SALARY > M.SALARY
 ORDER BY E.EMP_NAME ASC;
+
+-- Q) Give me managers name along with employee names only
+
+-- SOLUTION:
+SELECT E.emp_name AS EMPLOYEES,
+M.emp_name AS Managers
+FROM emp E JOIN emp M
+ON E.manager_id=M.emp_id;
+
+
+
+
+
+
+
+
+
+
+
+
