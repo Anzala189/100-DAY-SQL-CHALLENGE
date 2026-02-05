@@ -15,10 +15,12 @@ INSERT INTO EMP VALUES(8,'ASHISH',5000,2);
 SELECT * FROM EMP;
 
 --  My Solution 
-SELECT E.EMP_ID, E.EMP_NAME, M.EMP_NAME AS MANAGER_NAME, E.SALARY, M.SALARY AS "MANAGER SALARY"
-FROM EMP E INNER JOIN EMP M ON M.EMP_ID = E.MANAGER_ID 
-WHERE E.SALARY > M.SALARY
-ORDER BY E.EMP_NAME ASC;
+SELECT e.emp_name AS Employees, e.salary AS Employee_salary,
+m.emp_name AS Manager, m.salary AS manager_salary
+FROM emp e JOIN emp m
+ON e.manager_id=m.emp_id 
+WHERE e.salary>m.salary
+ORDER BY e.salary ASC;
 
 -- Q) Give me managers name along with employee names only
 
