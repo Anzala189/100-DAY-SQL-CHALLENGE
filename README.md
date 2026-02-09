@@ -113,8 +113,6 @@ JOIN first_visit fv
 GROUP BY co.order_date
 ORDER BY co.order_date;
 
-![image](https://github.com/Anzala189/100-DAY-SQL-CHALLENGE/blob/c7a07cad66fadd64bbc224d9d3afe37598d7421d/iman%20managersalary.jpg)
-
 
 
 
