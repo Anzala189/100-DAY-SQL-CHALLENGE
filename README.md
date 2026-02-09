@@ -72,6 +72,48 @@ ORDER BY E.EMP_NAME ASC;
 ![image](https://github.com/Anzala189/100-DAY-SQL-CHALLENGE/blob/c7a07cad66fadd64bbc224d9d3afe37598d7421d/images/Day_2_employeesalary%20more%20than%20managersalary.jpg)
 
 
+-- Day 3 : Find the new & repeated customers
+-- Script 3 :
+CREATE DATABASE new_repeated_customers;
+USE new_repeated_customers;
+
+CREATE TABLE CUSTOMER_ORDERS (
+ORDER_ID INTEGER,
+CUSTOMER_ID INTEGER,
+ORDER_DATE DATE,
+ORDER_AMOUNT INTEGER
+);
+INSERT INTO CUSTOMER_ORDERS VALUES(1,100,CAST('2022-01-01' AS DATE),2000),(2,200,CAST('2022-01-01' AS DATE),2500),(3,300,CAST('2022-01-01' AS DATE),2100)
+,(4,100,CAST('2022-01-02' AS DATE),2000),(5,400,CAST('2022-01-02' AS DATE),2200),(6,500,CAST('2022-01-02' AS DATE),2700)
+,(7,100,CAST('2022-01-03' AS DATE),3000),(8,400,CAST('2022-01-03' AS DATE),1000),(9,600,CAST('2022-01-03' AS DATE),3000);
+select*FROM Customer_orders;
+
+SOLUTION:
+
+WITH first_visit AS (
+    SELECT 
+        customer_id, 
+        MIN(order_date) AS first_visit_date
+    FROM customer_orders
+    GROUP BY customer_id
+)
+SELECT 
+    co.order_date,
+    SUM(CASE 
+            WHEN co.order_date = fv.first_visit_date THEN 1 
+            ELSE 0 
+        END) AS first_visit_flag,
+    SUM(CASE 
+            WHEN co.order_date <> fv.first_visit_date THEN 1 
+            ELSE 0 
+        END) AS repeat_visit_flag
+FROM customer_orders co
+JOIN first_visit fv 
+    ON co.customer_id = fv.customer_id
+GROUP BY co.order_date
+ORDER BY co.order_date;
+
+![image](https://github.com/Anzala189/100-DAY-SQL-CHALLENGE/blob/c7a07cad66fadd64bbc224d9d3afe37598d7421d/iman%20managersalary.jpg)
 
 
 
